@@ -42,6 +42,7 @@ export default async function revalidate(
     const { body, isValidSignature } = await parseBody(
       req,
       process.env.SANITY_REVALIDATE_SECRET,
+      true
     )
     if (!isValidSignature) {
       const message = 'Invalid signature'
